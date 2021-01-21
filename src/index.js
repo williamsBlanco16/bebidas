@@ -1,9 +1,12 @@
-import react from 'react'
+import React from 'react'
 import ReactDom from 'react-dom'
+import './bootstrap.min.css'
+import './index.css'
 
+import App from './components/App'
 
 ReactDom.render(
-  react.createElement('div',null,'hola mundo version 2'),
+  <App/>,
   document.getElementById('root')
 )
 
