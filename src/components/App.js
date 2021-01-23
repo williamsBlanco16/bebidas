@@ -2,17 +2,20 @@ import React from 'react';
 import Header from './Header'
 import Form from './Form'
 import CategoriaProvider from '../context/CategoriaContext'
+import RecipeProvider from '../context/RecipeContex'
 
 const App = () => {
 
   return (
     <CategoriaProvider>
-      <Header/>
-      <div className="container mt-5">
-        <div className="row">
-          <Form/>
+      <RecipeProvider>
+        <Header/>
+        <div className="container mt-5">
+          <div className="row">
+            <Form/>
+          </div>
         </div>
-      </div>
+      </RecipeProvider>
     </CategoriaProvider>
   );
 }
