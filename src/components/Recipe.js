@@ -52,7 +52,7 @@ const Recipe = ({recipe}) => {
         modalRecipe[`strIngredient${i}`]
         ?(<li key={i}>
           { modalRecipe[`strIngredient${i}`]}
-          { modalRecipe[`strMeasures${i}`] }
+          { modalRecipe[`strMeasure${i}`] }
         </li>)
         :null
         
