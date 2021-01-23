@@ -38,10 +38,28 @@ const Recipe = ({recipe}) => {
   const handleOpen = () => {
     setOpen(true)
   }
+  
   const handleClose = () => {
     setOpen(false)
-    setModalRecipe({})
+    setModalRecipe("")
+    setRecipeId("")
   }
+
+  const showIngredients = modalRecipe => {
+
+    return(
+      [...new Array(16)].map((e,i) => (
+        modalRecipe[`strIngredient${i}`]
+        ?(<li key={i}>
+          { modalRecipe[`strIngredient${i}`]}
+          { modalRecipe[`strMeasures${i}`] }
+        </li>)
+        :null
+        
+      )).filter(e => e !== null)
+    )
+  }
+
 
   return (
     <div className="col-md-4 mb-3">
@@ -74,6 +92,12 @@ const Recipe = ({recipe}) => {
                 {modalRecipe.strInstructions}
               </p>
               <img className="img-fluid my-4" src={modalRecipe.strDrinkThumb} alt={modalRecipe.strDrink}/>
+              <h3>Ingredientes y Cantidades</h3>
+              <ul>
+                {
+                  showIngredients(modalRecipe)
+                }
+              </ul>
             </div>
          </Modal>
         </div>
