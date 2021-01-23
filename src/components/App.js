@@ -1,15 +1,19 @@
 import React from 'react';
 import Header from './Header'
+import Form from './Form'
+import CategoriaProvider from '../context/CategoriaContext'
 
 const App = () => {
+
   return (
-    <div>
+    <CategoriaProvider>
       <Header/>
       <div className="container mt-5">
         <div className="row">
+          <Form/>
         </div>
       </div>
-    </div>
+    </CategoriaProvider>
   );
 }
 
