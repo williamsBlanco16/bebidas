@@ -41,7 +41,7 @@ const Form = () => {
         </div>
         <div className="col-md-4">
           <select 
-            name="categoria"
+            name="category"
             className="form-control"
             onChange={handlerChange}
           >

@@ -3,18 +3,23 @@ import Header from './Header'
 import Form from './Form'
 import CategoriaProvider from '../context/CategoriaContext'
 import RecipeProvider from '../context/RecipeContex'
+import RecipeList from './RecipeList';
+import ModalProvider from '../context/ModalContext'
 
 const App = () => {
 
   return (
     <CategoriaProvider>
       <RecipeProvider>
-        <Header/>
-        <div className="container mt-5">
-          <div className="row">
-            <Form/>
+        <ModalProvider>
+          <Header/>
+          <div className="container mt-5">
+            <div className="row">
+              <Form/>
+            </div>
+            <RecipeList/>
           </div>
-        </div>
+        </ModalProvider>
       </RecipeProvider>
     </CategoriaProvider>
   );
